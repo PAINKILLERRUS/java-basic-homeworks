@@ -13,10 +13,10 @@ public class MainApplication {
             switch (number) {
                 case 1 -> Application.greetings();
                 case 2 -> Application.checkSign(3, 4, 5);
-                case 3 -> Application.selectColour(40);
+                case 3 -> Application.selectColour(11);
                 case 4 -> Application.compareNumbers(5, 3);
                 case 5 -> Application.addOrSubtractAndPrint(5, 6, true);
             }
-        } while (number == 1 || number <= 5);
+        } while (number >= 1 || number <= 5);
     }
 }
