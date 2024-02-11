@@ -1,13 +1,12 @@
 package ru.antipov.java_basic.homeworks.homework5;
 
 public class Cat extends Animal {
-
-    public Cat(String name, int runSpeed, int swimSpeed, int endurance) {
-        super(name, runSpeed, swimSpeed, endurance);
+    public Cat(String name, int runSpeed, int swimSpeed, int stamina, int wasteOfStamina) {
+        super(name, runSpeed, swimSpeed, stamina, wasteOfStamina);
     }
 
     @Override
-    public int swim(int distance) {
+    public int swim(int distance, int wasteOfStamina) {
         System.out.println("Кот плавать не умеет!");
         return -1;
     }
@@ -18,10 +17,5 @@ public class Cat extends Animal {
                 + "Скорость бега: " + runSpeed + "\n"
                 + "Скорость плавания: " + swimSpeed + "\n"
                 + "Выносливость: " + stamina);
-    }
-
-    @Override
-    public int run(int distance) {
-        return super.run(distance);
     }
 }
