@@ -8,7 +8,7 @@ public class MainApp {
 
         var list = ListMethods.createRangeList(5, 10, 1);
         System.out.println("Диапозон листа: " + list);
-        var sum = ListMethods.sumIntegerMore5(1, 2, 3, 4, 5, 6, 7);
+        var sum = ListMethods.sumIntegerMore5(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
         System.out.println("Сумма аргументов списка больше 5: " + sum);
         var list2 = ListMethods.rewriteList(5, new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5)));
         System.out.println("Перезаписанные значения списка: " + list2);

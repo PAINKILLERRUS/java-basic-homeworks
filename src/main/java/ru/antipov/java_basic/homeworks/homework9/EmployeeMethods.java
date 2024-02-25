@@ -4,14 +4,14 @@ import java.util.*;
 
 public class EmployeeMethods {
 
-    public static List<Employee> employeeNameList(final ArrayList<Employee> list) {
+    public static List<Employee> employeeNameList(final List<Employee> list) {
         for (Employee emp : list) {
             System.out.println(emp.getName());
         }
         return list;
     }
 
-    public static List<Employee> employeeAgeList(final ArrayList<Employee> list, final int minAge) {
+    public static List<Employee> employeeAgeList(final List<Employee> list, final int minAge) {
         for (Employee emp : list) {
             if (emp.age <= minAge) {
                 System.out.println(emp);
@@ -20,7 +20,7 @@ public class EmployeeMethods {
         return list;
     }
 
-    public static List<Employee> empAerageAgeList(final ArrayList<Employee> list, final int averageAge) {
+    public static List<Employee> empAerageAgeList(final List<Employee> list, final int averageAge) {
         int sumAvgAge = 0;
         for (Employee emp : list) {
             sumAvgAge += emp.age / list.size();
@@ -33,7 +33,7 @@ public class EmployeeMethods {
         return list;
     }
 
-    public static List<Employee> empYoungList(final ArrayList<Employee> list) {
+    public static List<Employee> empYoungList(final List<Employee> list) {
         Employee min = list.stream().
                 min(Comparator.comparing(Employee::getAge)).
                 orElseThrow(NoSuchElementException::new);

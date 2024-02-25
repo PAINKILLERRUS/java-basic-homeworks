@@ -14,7 +14,7 @@ public class ListMethods {
         return arrayList;
     }
 
-    public static int sumIntegerMore5(final int... list) {
+    public static int sumIntegerMore5(final List<Integer> list) {
         int sum = 0;
         for (Integer value : list) {
             if (value > 5) {
@@ -24,12 +24,12 @@ public class ListMethods {
         return sum;
     }
 
-    public static List<Integer> rewriteList(final int a, final ArrayList<Integer> list) {
+    public static List<Integer> rewriteList(final int a, final List<Integer> list) {
         Collections.fill(list, a);
         return list;
     }
 
-    public static List<Integer> increaseList(final int a, final ArrayList<Integer> list) {
+    public static List<Integer> increaseList(final int a, final List<Integer> list) {
         list.replaceAll(integer -> integer + a);
         return list;
     }
