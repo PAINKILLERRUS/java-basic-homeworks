@@ -1,5 +1,5 @@
 package ru.antipov.java_basic.homeworks.homework10;
-
+//
 import java.util.HashMap;
 
 public class MainApp {
