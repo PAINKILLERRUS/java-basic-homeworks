@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class MainApp {
     public static void main(String[] args) {
         Map<String, Path> files = new HashMap<>();
-        File folder = new File("C:\\Documents\\java-basic-homeworks");
+        File folder = new File("./src/main/resources");
         for (File file : Objects.requireNonNull(folder.listFiles())) {
             files.put(file.getName(), file.toPath());
         }
@@ -27,6 +27,7 @@ public class MainApp {
     private static void print(Map<String, Path> files) {
         files.forEach((k, v) -> System.out.println(k + ": " + v));
     }
+
     private static void printFile(File file) {
         try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
             String line;
@@ -39,11 +40,13 @@ public class MainApp {
     private static void writeFile(File file) {
         try (PrintWriter pr = new PrintWriter(new FileOutputStream(file, true));
              Scanner scanner = new Scanner(System.in)) {
-            while (true) {
+            boolean exists = true;
+            while (exists) {
                 String str = scanner.nextLine();
-                if (str.equals("/exit"))
-                    break;
-                pr.println(str);
+                if (str.equals("/exit")) {
+                    exists = false;
+                }
+                pr.println(str + "\n");
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
