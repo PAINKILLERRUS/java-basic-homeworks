@@ -12,21 +12,12 @@ public class ExampleClient implements AutoCloseable {
     }
 
     /**
-  Метод отправки сообщений
+  Метод отправки сообщений,реализован в рамках урока
      */
     public void send(String message) throws IOException {
         outputStream.writeUTF(message);
         outputStream.flush();
         String result = inputStream.readUTF();
-        System.out.println(result);
-    }
-
-    public void calc(double number1,double number2, String operate) throws IOException {
-        outputStream.writeDouble(number1);
-        outputStream.writeDouble(number2);
-        outputStream.writeChars(operate);
-        outputStream.flush();
-        Double result = inputStream.readDouble();
         System.out.println(result);
     }
 

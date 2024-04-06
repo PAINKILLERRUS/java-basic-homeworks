@@ -1,6 +1,6 @@
 package ru.antipov.java_basic.homeworks.homework13.server;
 
-public class Calculator implements Calculate{
+public class Calculator implements Calculate {
     @Override
     public double sum(double a, double b) {
         return Calculate.super.sum(a, b);
@@ -18,6 +18,10 @@ public class Calculator implements Calculate{
 
     @Override
     public double quot(double a, double b) {
-        return Calculate.super.quot(a, b);
+        try {
+            return Calculate.super.quot(a, b);
+        } catch (ArithmeticException e) {
+            throw new ArithmeticException("Divide by Zero");
+        }
     }
 }

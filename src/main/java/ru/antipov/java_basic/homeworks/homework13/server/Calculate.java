@@ -1,5 +1,6 @@
 package ru.antipov.java_basic.homeworks.homework13.server;
 
+
 public interface Calculate {
 
     default double sum(double a, double b){
