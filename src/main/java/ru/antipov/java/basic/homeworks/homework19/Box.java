@@ -21,15 +21,19 @@ public class Box<T extends Fruit> {
     }
 
     public boolean compareBox(Box<?> another) {
-        if (this.getWeight() == another.getWeight())
-            return true;
-        else
-            return false;
+        float threshold = 0.0001F;
+        return Math.abs(this.getWeight() - another.getWeight()) < threshold;
     }
 
     public void shift(Box<T> another) {
-        for (T t : another.list) {
-            list.add(t);
+        if (another.list.isEmpty()) {
+            System.out.println("Коробка пуста");
+            return;
+        } else if (another.list.equals(this.list)) {
+            System.out.println("Одинаковое содержимое коробок");
+            return;
+        } else {
+            list.addAll(another.list);
         }
         another.list.clear();
     }
